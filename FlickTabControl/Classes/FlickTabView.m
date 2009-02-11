@@ -15,7 +15,7 @@
 
 
 @implementation FlickTabView
-@synthesize scrollView, leftCap, rightCap, flickView, delegate, dataSource;
+@synthesize scrollView, leftCap, rightCap, flickView, delegate, dataSource, buttonInsets;
 
 - (void)awakeFromNib {
 	scrollView.scrollsToTop = NO;
@@ -136,6 +136,12 @@
 	}
 	
 	return NSNotFound;
+}
+
+- (void)setButtonInsets:(UIEdgeInsets)insets {
+	buttonInsets = UIEdgeInsetsMake(0.0f, insets.left, 0.0f, insets.right);
+	self.flickView.contentInset = buttonInsets;
+	self.scrollView.contentInset = buttonInsets;
 }
 
 - (void)dealloc {

@@ -25,6 +25,7 @@
 	UIView* rightCap;
 	id dataSource;
 	id delegate;
+	UIEdgeInsets buttonInsets;
 }
 
 /*
@@ -56,6 +57,11 @@
  * Currectly selected tab
  */
 @property(readonly) NSInteger selectedTabIndex;
+
+/*
+ * Allows you to set the button left/right insets, top/bottom values will be set to 0 regardless.
+ */
+@property(nonatomic,assign) UIEdgeInsets buttonInsets;
 
 /*
  * These properties are used internally, shouldn't need to be used elsewhere.

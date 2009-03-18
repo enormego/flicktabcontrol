@@ -15,7 +15,7 @@
 
 
 @implementation FlickTabView
-@synthesize scrollView, leftCap, rightCap, flickView, delegate, dataSource, buttonInsets;
+@synthesize scrollView, leftCap, rightCap, delegate, dataSource, buttonInsets;
 
 - (void)awakeFromNib {
 	scrollView.scrollsToTop = NO;
@@ -64,7 +64,6 @@
 	}
 	
 	scrollView.contentSize = CGSizeMake(origin_x, 43.0f);
-	flickView.contentSize = CGSizeMake(origin_x, 43.0f);
 	
 	[self setupCaps];
 }
@@ -140,7 +139,6 @@
 
 - (void)setButtonInsets:(UIEdgeInsets)insets {
 	buttonInsets = UIEdgeInsetsMake(0.0f, insets.left, 0.0f, insets.right);
-	self.flickView.contentInset = buttonInsets;
 	self.scrollView.contentInset = buttonInsets;
 }
 
@@ -149,7 +147,6 @@
 	[scrollView release];
 	[leftCap release];
 	[rightCap release];
-	[flickView release];
     [super dealloc];
 }
 

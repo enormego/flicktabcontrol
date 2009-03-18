@@ -20,7 +20,6 @@
 @interface FlickTabView : UIView<UIScrollViewDelegate> {
 @private
 	UIScrollView* scrollView;
-	UIScrollView* flickView;
 	UIView* leftCap;
 	UIView* rightCap;
 	id dataSource;
@@ -66,7 +65,6 @@
 /*
  * These properties are used internally, shouldn't need to be used elsewhere.
  */
-@property(nonatomic,retain) IBOutlet UIScrollView* flickView;
 @property(nonatomic,retain) IBOutlet UIScrollView* scrollView;
 @property(nonatomic,retain) IBOutlet UIView* leftCap;
 @property(nonatomic,retain) IBOutlet UIView* rightCap;

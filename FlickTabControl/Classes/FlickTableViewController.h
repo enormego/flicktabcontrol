@@ -14,12 +14,10 @@
  * Important: Do not set tableHeaderView, tableHeaderView is set to flickTabView
  */
 
-@class FlickScrollView;
 @interface FlickTableViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,FlickTabViewDataSource,FlickTabViewDelegate> {
 @private
 	UITableView* _tableView;
 	FlickTabView* _flickTabView;
-	FlickScrollView* _flickScrollView;
 }
 
 /*
@@ -31,9 +29,4 @@
  * Provides access to the current flickTabView instance
  */
 @property(nonatomic,retain) FlickTabView* flickTabView;
-
-/*
- * Used internally, should never need to use this.
- */
-@property(nonatomic,retain) FlickScrollView* flickScrollView;
 @end

@@ -7,11 +7,9 @@
 //
 
 #import "FlickTableViewController.h"
-#import "FlickScrollView.h"
-
 
 @implementation FlickTableViewController
-@synthesize tableView=_tableView, flickTabView=_flickTabView, flickScrollView=_flickScrollView;
+@synthesize tableView=_tableView, flickTabView=_flickTabView;
 
 - (void)loadView {
 	[super loadView];
@@ -44,6 +42,7 @@
 	self.flickTabView.scrollView.showsHorizontalScrollIndicator = NO;
 	self.flickTabView.scrollView.bounces = YES;
 	self.flickTabView.scrollView.contentInset = UIEdgeInsetsMake(0.0f, 20.0f, 0.0f, 20.0f);
+	self.flickTabView.scrollView.delegate = self.flickTabView;
 	
 	self.flickTabView.backgroundColor = [UIColor colorWithHue:0.573816156f saturation:0.03f brightness:0.91f alpha:1.0f];
 	
@@ -53,27 +52,6 @@
 	
 	[self.flickTabView addSubview:imageView];
 	[imageView release];
-	
-	FlickScrollView* aFlickScrollView = [[FlickScrollView alloc] initWithFrame:self.flickTabView.frame];
-	self.flickScrollView = aFlickScrollView;
-	[aFlickScrollView release];
-	
-	self.flickScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-	self.flickScrollView.scrollsToTop = NO;
-	self.flickScrollView.actualScrollView = self.flickTabView.scrollView;
-	self.flickScrollView.delegate = self.flickTabView;
-	self.flickScrollView.directionalLockEnabled = YES;
-	self.flickScrollView.alwaysBounceHorizontal = YES;
-	self.flickScrollView.showsVerticalScrollIndicator = NO;
-	self.flickScrollView.showsHorizontalScrollIndicator = NO;
-	self.flickScrollView.alwaysBounceVertical = NO;
-	self.flickScrollView.alwaysBounceHorizontal = YES;
-	self.flickScrollView.bounces = YES;
-	self.flickScrollView.contentInset = UIEdgeInsetsMake(0.0f, 20.0f, 0.0f, 20.0f);
-	
-	self.flickTabView.flickView = self.flickScrollView;
-	
-	[self.view addSubview:self.flickScrollView];
 	
 	[self.flickTabView addSubview:self.flickTabView.scrollView];
 	
@@ -94,7 +72,9 @@
 	
 	[self.flickTabView awakeFromNib];
 	
-	self.tableView.tableHeaderView = self.flickTabView;
+	self.tableView.tableHeaderView = [[[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 1.0f, 43.0f)] autorelease];
+	
+	[self.view addSubview:self.flickTabView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -102,8 +82,14 @@
 		float y = (-scrollView.contentOffset.y);
 		float height = y > 0.0f ? 43.0f + y : 43.0f;
 		y = y > 0.0f ? 0.0f : y;
-		self.flickScrollView.frame = CGRectMake(0.0f, y, self.tableView.frame.size.width, height);
-		self.flickTabView.frame = CGRectMake(0.0f, 43.0f-height, self.tableView.frame.size.width, height);
+		self.flickTabView.frame = CGRectMake(0.0f, y, self.tableView.frame.size.width, height);
+		
+		float inset = 0.0f;
+		if(scrollView.contentOffset.y < 44.0f) {
+			inset = 44.0f + -scrollView.contentOffset.y;
+		}
+		
+		self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(inset, 0.0f, 0.0f, 0.0f);
 	}
 }
 
@@ -136,7 +122,7 @@
     }
     
     // Set up the cell...
-
+	
     return cell;
 }
 
@@ -159,7 +145,6 @@
 
 
 - (void)dealloc {
-	self.flickScrollView = nil;
 	self.flickTabView = nil;
 	self.tableView = nil;
     [super dealloc];

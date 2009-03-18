@@ -1,6 +1,6 @@
 //
 //  FlickTabButton.m
-//  FlickTabControl
+//  Enormego Frameworks
 //
 //  Created by Shaun Harrison on 12/12/08.
 //  Copyright 2008 enormego. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "FlickTabButton.h"
 
-#define unselectedColor [UIColor colorWithRed:78/255 green:86/255 blue:92/255 alpha:1.0f]
+#define unselectedColor [UIColor colorWithRed:78/255.0f green:86/255.0f blue:92/255.0f alpha:1.0f]
 #define unselectedShadowColor [UIColor colorWithWhite:1.0f alpha:0.7f]
 #define selectedColor [UIColor whiteColor]
 

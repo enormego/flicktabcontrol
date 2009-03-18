@@ -12,7 +12,6 @@ The demo app shows you how simple it is to get going with **FlickTabControl**
 ## Other Classes
 ### Internal classes for FlickTabView and FlickTableViewController.
 * **FlickTabButton:** Subclass of UIControl, creates the tab used in FlickTabView
-* **FlickScrollView:** Scroll view that passes all of it's scrolls to FlickTabView. This is used to overlay UITableView to avoid any issues with nested UIScrollViews.
 
 # Additional Information
 ## tableHeaderView

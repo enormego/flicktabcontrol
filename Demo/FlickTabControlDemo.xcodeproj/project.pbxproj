@@ -14,7 +14,6 @@
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
-		28D4FCF30F432210007E5B49 /* FlickScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4FCE70F432210007E5B49 /* FlickScrollView.m */; };
 		28D4FCF40F432210007E5B49 /* FlickTabButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4FCE90F432210007E5B49 /* FlickTabButton.m */; };
 		28D4FCF50F432210007E5B49 /* FlickTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4FCEB0F432210007E5B49 /* FlickTableViewController.m */; };
 		28D4FCF60F432210007E5B49 /* FlickTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4FCED0F432210007E5B49 /* FlickTabView.m */; };
@@ -35,8 +34,6 @@
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		28D4FCE60F432210007E5B49 /* FlickScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickScrollView.h; sourceTree = "<group>"; };
-		28D4FCE70F432210007E5B49 /* FlickScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickScrollView.m; sourceTree = "<group>"; };
 		28D4FCE80F432210007E5B49 /* FlickTabButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickTabButton.h; sourceTree = "<group>"; };
 		28D4FCE90F432210007E5B49 /* FlickTabButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickTabButton.m; sourceTree = "<group>"; };
 		28D4FCEA0F432210007E5B49 /* FlickTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickTableViewController.h; sourceTree = "<group>"; };
@@ -130,8 +127,6 @@
 		28D4FDBC0F4328C6007E5B49 /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				28D4FCE60F432210007E5B49 /* FlickScrollView.h */,
-				28D4FCE70F432210007E5B49 /* FlickScrollView.m */,
 				28D4FCE80F432210007E5B49 /* FlickTabButton.h */,
 				28D4FCE90F432210007E5B49 /* FlickTabButton.m */,
 			);
@@ -246,7 +241,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* FlickTabControlDemoAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
-				28D4FCF30F432210007E5B49 /* FlickScrollView.m in Sources */,
 				28D4FCF40F432210007E5B49 /* FlickTabButton.m in Sources */,
 				28D4FCF50F432210007E5B49 /* FlickTableViewController.m in Sources */,
 				28D4FCF60F432210007E5B49 /* FlickTabView.m in Sources */,
